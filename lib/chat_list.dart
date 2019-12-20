@@ -2,18 +2,15 @@ library chat_list;
 
 import 'package:chat_list/models/message_model.dart';
 import 'package:chat_list/widgets/message_widget.dart';
-import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/widgets.dart';
 
 
 class ChatList extends StatelessWidget {
 
 
-  ScrollController scrollController = ScrollController();
-  List<MessageModel> messageList = List();
-  bool isTyping = false;
+  final List<MessageModel> messageList;
 
-  ChatList(this.messageList, {this.isTyping, this.scrollController});
+  ChatList(this.messageList);
 
   Widget build(context) {
     return Column(
@@ -23,7 +20,6 @@ class ChatList extends StatelessWidget {
           child:
           ListView.builder(
             shrinkWrap: true,
-            controller: scrollController,
             padding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
             itemCount: messageList.length,
             itemBuilder: (BuildContext buildContext, int index) {
