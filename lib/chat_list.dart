@@ -1,7 +1,9 @@
 library chat_list;
 
 import 'package:chat_list/models/message_model.dart';
+export 'package:chat_list/models/message_model.dart';
 import 'package:chat_list/widgets/message_widget.dart';
+export  'package:chat_list/widgets/message_widget.dart';
 import 'package:flutter/widgets.dart';
 
 
