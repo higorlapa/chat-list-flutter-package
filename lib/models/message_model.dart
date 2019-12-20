@@ -2,13 +2,11 @@ import 'owner_type_enum.dart';
 
 class MessageModel {
 
-  int id;
   String content;
-  dynamic timestamp;
   OwnerType ownerType;
   String ownerName;
 
-  MessageModel(this.content, this.ownerType, {this.id, this.ownerName, this.timestamp});
+  MessageModel(this.content, this.ownerType, {this.ownerName});
 
   String senderInitials ()  {
 
@@ -33,6 +31,8 @@ class MessageModel {
     }
 
   }
+
+
 
 
 }
