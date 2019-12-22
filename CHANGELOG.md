@@ -1,7 +1,9 @@
-## [0.0.1] - TODO: Add release date.
-
-* TODO: Describe initial release.
-
-## [0.0.1+2] - 12/22/2029
+## [0.0.1+2] - 12/22/2019
 
 * Updates the README.md file with examples
+
+
+## [0.0.1] - 12/20/2019
+
+* initial release
+
