@@ -28,5 +28,5 @@ ChatList(
 
 ```
 
-<img src="https://github.com/lapadev/chat-list-flutter-package/tree/master/example/screenshots/example.png?raw=true" width="360">
+<img src="https://github.com/lapadev/chat-list-flutter-package/blob/master/example/screenshots/example.png?raw=true" width="360">
 
