@@ -12,7 +12,7 @@ class ChatList extends StatelessWidget {
 
   final List<MessageModel> messageList;
 
-  ChatList(this.messageList);
+  ChatList({this.messageList});
 
   Widget build(context) {
     return Column(
@@ -35,24 +35,6 @@ class ChatList extends StatelessWidget {
           ),
           flex: 8,
         ),
-//        isTyping ?
-//        Flexible(
-//          child: Row(
-//            mainAxisAlignment: MainAxisAlignment.start,
-//            children: <Widget>[
-//              SizedBox(
-//                width: 50,
-//                height: 50,
-//                child: FlareActor(
-//                  'files/typing_animation.flr',
-//                  fit: BoxFit.contain,
-//                  animation: 'startTyping',
-//                ),
-//              ),
-//            ],
-//          ),
-//          flex: 1,
-//        ) : SizedBox(height: 30, width: 50, child: Container(),)
       ],
     );
   }
