@@ -21,7 +21,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-
   MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
 
@@ -30,17 +29,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-  List<MessageModel> _messageList = [ MessageModel("Hi, how are you?", OwnerType.SENDER, ownerName: "Higor Lapa"), MessageModel("Hi, I'm fine and you?!", OwnerType.RECEIVER, ownerName: "Bill Gates")  ];
+  List<MessageModel> _messageList = [
+    MessageModel("Hi, how are you?", OwnerType.SENDER, ownerName: "Higor Lapa"),
+    MessageModel("Hi, I'm fine and you?!", OwnerType.RECEIVER,
+        ownerName: "Bill Gates")
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: ChatList(_messageList))
-    );
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: Center(child: ChatList(messageList: _messageList)));
   }
 }
