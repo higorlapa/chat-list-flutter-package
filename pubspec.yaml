@@ -1,6 +1,6 @@
 name: chat_list
 description: A flutter package to incorporate a chat view in a simple way
-version: 0.0.1+2
+version: 0.0.1+21
 homepage: "https://github.com/lapadev/chat-list-flutter-package"
 authors:
   - higorlapaa@gmail.com
