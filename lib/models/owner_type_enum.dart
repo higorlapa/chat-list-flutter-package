@@ -1,7 +1,0 @@
-
-enum OwnerType {
-
-  RECEIVER,
-  SENDER
-
-}

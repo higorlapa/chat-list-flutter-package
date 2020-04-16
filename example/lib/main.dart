@@ -1,6 +1,4 @@
 import 'package:chat_list/chat_list.dart';
-import 'package:chat_list/models/message_model.dart';
-import 'package:chat_list/models/owner_type_enum.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -29,10 +27,61 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<MessageModel> _messageList = [
-    MessageModel("Hi, how are you?", OwnerType.SENDER, ownerName: "Higor Lapa"),
-    MessageModel("Hi, I'm fine and you?!", OwnerType.RECEIVER,
-        ownerName: "Bill Gates")
+  final List<MessageWidget> _messageList = [
+    MessageWidget(
+        content: "Hi, Bill! This is the simplest example ever.",
+        ownerType: OwnerType.sender,
+        ownerName: "Higor Lapa"),
+    MessageWidget(
+        content:
+            "Let's make it better , Higor. Custom font size and text color",
+        textColor: Colors.black38,
+        fontSize: 18.0,
+        ownerType: OwnerType.receiver,
+        ownerName: "Bill Gates"),
+    MessageWidget(
+        content: "Bill, we have to talk about business",
+        fontSize: 12.0,
+        ownerType: OwnerType.sender,
+        ownerName: "Higor"),
+    MessageWidget(
+        content: "Wow, I like it. Tell me what I can do for you, pal.",
+        ownerType: OwnerType.receiver,
+        ownerName: "Bill Gates"),
+    MessageWidget(
+        content: "I'm just a copy",
+        ownerType: OwnerType.sender,
+        ownerName: "Higor"),
+    MessageWidget(
+        content: "Nice",
+        ownerType: OwnerType.receiver,
+        ownerName: "Bill Gates"),
+    MessageWidget(
+        content: "I'm just a copy",
+        ownerType: OwnerType.sender,
+        ownerName: "Higor"),
+    MessageWidget(
+        content: "Nice",
+        ownerType: OwnerType.receiver,
+        ownerName: "Bill Gates"),
+    MessageWidget(
+        content: "I'm just a copy",
+        ownerType: OwnerType.receiver,
+        ownerName: "Bill Gates"),
+    MessageWidget(
+        content: "Nice",
+        ownerType: OwnerType.receiver,
+        ownerName: "Bill Gates"),
+    MessageWidget(
+        content: "I'm just a copy",
+        ownerType: OwnerType.sender,
+        ownerName: "Higor"),
+    MessageWidget(
+        content: "Nice", ownerType: OwnerType.sender, ownerName: "Higor"),
+    MessageWidget(
+        content: "I'm just a copy",
+        ownerType: OwnerType.sender,
+        ownerName: "Higor"),
   ];
 
   @override
@@ -41,6 +90,6 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: Center(child: ChatList(messageList: _messageList)));
+        body: Center(child: ChatList(children: _messageList)));
   }
 }

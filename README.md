@@ -15,15 +15,23 @@ See [source](https://github.com/lapadev/chat-list-flutter-package/tree/master/ex
 ```dart
 
 //Create a list with messages
-  List<MessageModel> _messageList = [
-    MessageModel("Hi, how are you?", OwnerType.SENDER, ownerName: "Higor Lapa"),
-    MessageModel("Hi, I'm fine and you?!", OwnerType.RECEIVER,
-        ownerName: "Bill Gates")
+   final List<MessageWidget> _messageList = [
+      MessageWidget(
+          content: "Hi, Bill! This is the simplest example ever.",
+          ownerType: OwnerType.sender,
+          ownerName: "Higor Lapa"),
+      MessageWidget(
+          content:
+              "Let's make it better , Higor. Custom font size and text color",
+          textColor: Colors.black38,
+          fontSize: 18.0,
+          ownerType: OwnerType.receiver,
+          ownerName: "Bill Gates"),
   ];
 
 //Place the widget inside your build function
 ChatList(
-  messageList: _messageList,
+  children: _messageList,
 ),
 
 ```
