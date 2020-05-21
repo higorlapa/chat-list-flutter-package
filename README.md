@@ -29,9 +29,12 @@ See [source](https://github.com/lapadev/chat-list-flutter-package/tree/master/ex
           ownerName: "Bill Gates"),
   ];
 
+  final ScrollController _scrollController = ScrollController();
+
 //Place the widget inside your build function
 ChatList(
   children: _messageList,
+  scrollController: _scrollController
 ),
 
 ```

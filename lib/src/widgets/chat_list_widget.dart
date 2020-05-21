@@ -4,8 +4,9 @@ import '../../chat_list.dart';
 
 class ChatList extends StatelessWidget {
   final List<MessageWidget> children;
+  final ScrollController scrollController;
 
-  ChatList({this.children = const <MessageWidget>[]});
+  ChatList({this.children = const <MessageWidget>[], this.scrollController});
 
   Widget build(context) {
     return Column(
@@ -14,6 +15,7 @@ class ChatList extends StatelessWidget {
         Expanded(
           child: ListView.builder(
             shrinkWrap: true,
+            controller: scrollController ?? ScrollController(),
             padding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
             itemCount: children.length,
             itemBuilder: (BuildContext buildContext, int index) {

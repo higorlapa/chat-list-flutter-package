@@ -1,6 +1,6 @@
 name: chat_list
 description: A flutter package to incorporate a chat view in a simple way
-version: 1.0.0
+version: 1.0.1
 homepage: "https://github.com/lapadev/chat-list-flutter-package"
 
 environment:
@@ -17,6 +17,4 @@ dev_dependencies:
 
 flutter:
 
-# assets:
-#  - files/typing_animation.flr
 

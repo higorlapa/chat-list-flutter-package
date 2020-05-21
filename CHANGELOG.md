@@ -1,3 +1,7 @@
+## [1.0.1] - 20/05/2020
+
+* Add the ScrollController to ChatListWidget
+
 ## [1.0.0] - 15/04/2020 [BREAKING]
 
 * Refactor all the project removing useless code and adding new features to MessageWidget,
