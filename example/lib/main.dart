@@ -27,6 +27,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final ScrollController _scrollController = ScrollController();
+
   final List<MessageWidget> _messageList = [
     MessageWidget(
         content: "Hi, Bill! This is the simplest example ever.",
@@ -90,6 +92,15 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: Center(child: ChatList(children: _messageList)));
+        body: Center(
+            child: ChatList(
+          children: _messageList,
+          scrollController: _scrollController,
+        )));
+  }
+
+  void _onNewMessage() {
+    _scrollController.animateTo(_scrollController.position.maxScrollExtent,
+        duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
   }
 }
