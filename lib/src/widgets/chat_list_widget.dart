@@ -4,7 +4,7 @@ import '../../chat_list.dart';
 
 class ChatList extends StatelessWidget {
   final List<MessageWidget> children;
-  final ScrollController scrollController;
+  final ScrollController? scrollController;
 
   ChatList({this.children = const <MessageWidget>[], this.scrollController});
 

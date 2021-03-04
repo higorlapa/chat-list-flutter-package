@@ -4,14 +4,14 @@ import 'package:flutter/widgets.dart';
 
 class MessageWidget extends StatefulWidget {
   final String content;
-  final String fontFamily;
-  final double fontSize;
-  final Color textColor;
-  final OwnerType ownerType;
-  final String ownerName;
+  final String? fontFamily;
+  final double? fontSize;
+  final Color? textColor;
+  final OwnerType? ownerType;
+  final String? ownerName;
 
   MessageWidget(
-      {this.content,
+      {this.content = "",
       this.fontFamily,
       this.fontSize,
       this.textColor,
@@ -25,16 +25,16 @@ class MessageWidget extends StatefulWidget {
 class _MessageWidgetState extends State<MessageWidget>
     implements IMessageWidget {
   String get senderInitials {
-    if (widget.ownerName == null || widget.ownerName.isEmpty) return 'ME';
+    if (widget.ownerName == null || widget.ownerName!.isEmpty) return 'ME';
 
     try {
-      if (widget.ownerName.lastIndexOf(' ') == -1) {
-        return widget.ownerName[0];
+      if (widget.ownerName!.lastIndexOf(' ') == -1) {
+        return widget.ownerName![0];
       } else {
         var lastInitial =
-            widget.ownerName.substring(widget.ownerName.lastIndexOf(' ') + 1);
+            widget.ownerName!.substring(widget.ownerName!.lastIndexOf(' ') + 1);
 
-        return widget.ownerName[0] + lastInitial[0];
+        return widget.ownerName![0] + lastInitial[0];
       }
     } catch (e) {
       print(e);
@@ -109,7 +109,7 @@ class _MessageWidgetState extends State<MessageWidget>
     return CircleAvatar(
         radius: 12,
         child: Text(
-          senderInitials ?? "",
+          senderInitials,
           style: TextStyle(fontSize: 9),
         ));
   }
