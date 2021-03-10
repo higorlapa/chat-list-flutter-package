@@ -2,29 +2,56 @@ import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class MessageWidget extends StatefulWidget {
+class Message extends StatefulWidget {
+  /// The content to be displayed as a message
   final String content;
+
+  /// the font-family of the [content].
   final String? fontFamily;
-  final double? fontSize;
+
+  /// the font-size of the [content].
+  final double fontSize;
+
+  /// the text-color of the [content].
   final Color? textColor;
-  final OwnerType? ownerType;
+
+  /// Controls who is sending or receiving a message.
+  ///
+  /// Used to handle in which side of the screen the message
+  /// will be displayed.
+  final OwnerType ownerType;
+
+  /// Name to be displayed with the initials.
+  ///
+  /// egg.: Higor Lapa will be HL
   final String? ownerName;
 
-  MessageWidget(
+  /// Controls if we should show the owner name inside the avatar
+  final bool showOwnerName;
+
+  /// Background color of the message
+  final Color? backgroundColor;
+
+  Message(
       {this.content = "",
       this.fontFamily,
-      this.fontSize,
+      this.fontSize = 16.0,
       this.textColor,
-      this.ownerType,
-      this.ownerName});
+      this.ownerType = OwnerType.sender,
+      this.ownerName,
+      this.showOwnerName = true,
+      this.backgroundColor});
 
   @override
-  _MessageWidgetState createState() => _MessageWidgetState();
+  _MessageState createState() => _MessageState();
 }
 
-class _MessageWidgetState extends State<MessageWidget>
-    implements IMessageWidget {
+class _MessageState extends State<Message> implements IMessageWidget {
   String get senderInitials {
+    if (!widget.showOwnerName) {
+      return "";
+    }
+
     if (widget.ownerName == null || widget.ownerName!.isEmpty) return 'ME';
 
     try {
@@ -65,7 +92,8 @@ class _MessageWidgetState extends State<MessageWidget>
               margin: BubbleEdges.fromLTRB(10, 10, 30, 0),
               stick: true,
               nip: BubbleNip.leftTop,
-              color: Color.fromRGBO(233, 232, 252, 10),
+              color:
+                  widget.backgroundColor ?? Color.fromRGBO(233, 232, 252, 10),
               alignment: Alignment.topLeft,
               child: _buildContentText(TextAlign.left)),
         ),
@@ -84,7 +112,7 @@ class _MessageWidgetState extends State<MessageWidget>
               margin: BubbleEdges.fromLTRB(30, 10, 10, 0),
               stick: true,
               nip: BubbleNip.rightTop,
-              color: Colors.white,
+              color: widget.backgroundColor ?? Colors.white,
               alignment: Alignment.topRight,
               child: _buildContentText(TextAlign.right)),
         ),
@@ -98,7 +126,7 @@ class _MessageWidgetState extends State<MessageWidget>
       widget.content,
       textAlign: align,
       style: TextStyle(
-          fontSize: widget.fontSize ?? 16.0,
+          fontSize: widget.fontSize,
           color: widget.textColor ?? Colors.black,
           fontFamily: widget.fontFamily ??
               DefaultTextStyle.of(context).style.fontFamily),

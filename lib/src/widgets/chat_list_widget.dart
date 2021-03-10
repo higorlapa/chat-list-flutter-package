@@ -3,28 +3,33 @@ import 'package:flutter/material.dart';
 import '../../chat_list.dart';
 
 class ChatList extends StatelessWidget {
-  final List<MessageWidget> children;
+  /// Messages that will be shown
+  final List<Message> children;
+
+  /// ScrollController to be attached in the [ListView]
   final ScrollController? scrollController;
 
-  ChatList({this.children = const <MessageWidget>[], this.scrollController});
+  /// [ListView] shrinkWrap field
+  final bool shrinkWrap;
+
+  /// Padding of the list
+  final EdgeInsets padding;
+
+  ChatList(
+      {this.children = const <Message>[],
+      this.scrollController,
+      this.shrinkWrap = true,
+      this.padding = const EdgeInsets.symmetric(horizontal: 5, vertical: 10)});
 
   Widget build(context) {
-    return Column(
-      mainAxisSize: MainAxisSize.max,
-      children: <Widget>[
-        Expanded(
-          child: ListView.builder(
-            shrinkWrap: true,
-            controller: scrollController ?? ScrollController(),
-            padding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
-            itemCount: children.length,
-            itemBuilder: (BuildContext buildContext, int index) {
-              return children[index];
-            },
-          ),
-          flex: 8,
-        ),
-      ],
+    return ListView.builder(
+      shrinkWrap: shrinkWrap,
+      controller: scrollController ?? ScrollController(),
+      padding: padding,
+      itemCount: children.length,
+      itemBuilder: (BuildContext buildContext, int index) {
+        return children[index];
+      },
     );
   }
 }

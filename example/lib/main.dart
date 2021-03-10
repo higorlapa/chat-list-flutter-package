@@ -29,58 +29,57 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final ScrollController _scrollController = ScrollController();
 
-  final List<MessageWidget> _messageList = [
-    MessageWidget(
+  final List<Message> _messageList = [
+    Message(
         content: "Hi, Bill! This is the simplest example ever.",
         ownerType: OwnerType.sender,
         ownerName: "Higor Lapa"),
-    MessageWidget(
+    Message(
         content:
             "Let's make it better , Higor. Custom font size and text color",
         textColor: Colors.black38,
         fontSize: 18.0,
         ownerType: OwnerType.receiver,
         ownerName: "Bill Gates"),
-    MessageWidget(
+    Message(
         content: "Bill, we have to talk about business",
         fontSize: 12.0,
         ownerType: OwnerType.sender,
         ownerName: "Higor"),
-    MessageWidget(
+    Message(
         content: "Wow, I like it. Tell me what I can do for you, pal.",
         ownerType: OwnerType.receiver,
         ownerName: "Bill Gates"),
-    MessageWidget(
+    Message(
         content: "I'm just a copy",
         ownerType: OwnerType.sender,
         ownerName: "Higor"),
-    MessageWidget(
+    Message(
         content: "Nice",
         ownerType: OwnerType.receiver,
         ownerName: "Bill Gates"),
-    MessageWidget(
+    Message(
         content: "I'm just a copy",
         ownerType: OwnerType.sender,
         ownerName: "Higor"),
-    MessageWidget(
+    Message(
         content: "Nice",
         ownerType: OwnerType.receiver,
         ownerName: "Bill Gates"),
-    MessageWidget(
+    Message(
         content: "I'm just a copy",
         ownerType: OwnerType.receiver,
         ownerName: "Bill Gates"),
-    MessageWidget(
+    Message(
         content: "Nice",
         ownerType: OwnerType.receiver,
         ownerName: "Bill Gates"),
-    MessageWidget(
+    Message(
         content: "I'm just a copy",
         ownerType: OwnerType.sender,
         ownerName: "Higor"),
-    MessageWidget(
-        content: "Nice", ownerType: OwnerType.sender, ownerName: "Higor"),
-    MessageWidget(
+    Message(content: "Nice", ownerType: OwnerType.sender, ownerName: "Higor"),
+    Message(
         content: "I'm just a copy",
         ownerType: OwnerType.sender,
         ownerName: "Higor"),
